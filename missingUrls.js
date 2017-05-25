@@ -1,11 +1,5 @@
 var Nightmare = require('nightmare')
-var nightmare,courseID,done,lazies = {
-	'competency':'https://byui.brightspace.com/d2l/lms/competencies/competency_list.d2l?ou='+courseID,
-	'grades':'https://byui.brightspace.com/d2l/lms/grades/admin/manage/gradeslist.d2l?ou='+courseID,
-	'syllabus':'https://byui.brightspace.com/d2l/le/content/'+courseID+'/Home',
-	'questiondb':'https://byui.brightspace.com/d2l/lms/qc/main_frame.d2l?ou='+courseID,
-	'discussion':'https://byui.brightspace.com/d2l/le/'+courseID+'/discussions/List'
-}
+var nightmare,courseID,done,lazies;
 
 function factory(name, url, next) {
 	return function (bucket) {
@@ -56,6 +50,13 @@ module.exports = {
 		courseID = ID
 		done = callback
 		nightmare = Nightmare({show:true})
+		lazies = {
+			'competency':'https://byui.brightspace.com/d2l/lms/competencies/competency_list.d2l?ou='+courseID,
+			'grades':'https://byui.brightspace.com/d2l/lms/grades/admin/manage/gradeslist.d2l?ou='+courseID,
+			'syllabus':'https://byui.brightspace.com/d2l/le/content/'+courseID+'/Home',
+			'questiondb':'https://byui.brightspace.com/d2l/lms/qc/main_frame.d2l?ou='+courseID,
+			'discussion':'https://byui.brightspace.com/d2l/le/'+courseID+'/discussions/List'
+		}
 		var go = [['rubrics', 'https://byui.brightspace.com/d2l/lp/rubrics/list.d2l?ou=' + courseID],
 				  ['dropbox', 'https://byui.brightspace.com/d2l/lms/dropbox/admin/folders_manage.d2l?ou=' + courseID],
 				  ['survey', 'https://byui.brightspace.com/d2l/lms/survey/admin/surveys_manage.d2l?ou=' + courseID],
