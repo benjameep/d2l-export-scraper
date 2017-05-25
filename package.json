@@ -1,7 +1,7 @@
 {
-  "name": "search",
+  "name": "d2l-export-scraper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reads a d2l export folder and returns all the html chunks",
   "main": "tearOutText.js",
   "dependencies": {
     "cheerio": "^0.22.0",
@@ -12,6 +12,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Benjamin Earl",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjameep/d2l-export-scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benjameep/d2l-export-scraper/issues"
+  },
+  "homepage": "https://github.com/benjameep/d2l-export-scraper#readme"
 }
